@@ -1,9 +1,11 @@
-"""Driver for the TriageSystem class."""
+"""Driver program for the TriageSystem class.
+"""
 
 from triage_system import TriageSystem
 
 
-patients = [
+# (name, severity) in arrival order, taken from the project instructions.
+TEST_PATIENTS = [
     ("Sofia", 5),
     ("Bob", 2),
     ("Charlie", 4),
@@ -16,8 +18,9 @@ patients = [
 
 
 def main():
+    """Add the test patients and process them in triage order."""
     triage = TriageSystem()
-    for name, severity in patients:
+    for name, severity in TEST_PATIENTS:
         triage.add_patient(name, severity)
 
     print("Processing patients:")
